@@ -174,10 +174,25 @@ improving accuracy and extending the methodology in subsequent studies.
    *IEEE Geoscience and Remote Sensing Magazine*, 5(4), 8-36.
    doi:10.1109/MGRS.2017.2762307
 
-5. Huang, X., Lu, Q., & Zhang, L. (2015).
-   "A Multi-Index Learning Approach for Classification of High-Resolution Remotely Sensed Images Over Urban Areas."
-   *ISPRS Journal of Photogrammetry and Remote Sensing*, 106, 19-29.
-   doi:10.1016/j.isprsjprs.2015.04.007
+5. Reback, J., Uijttewaal, P., & Simons, G. (2020). 
+   *Foundation models for Earth observation: A review and outlook.* 
+   Remote Sensing of Environment, 248, 111964. 
+   doi:10.1016/j.rse.2020.111964
+
+6. Jean, N., Wang, S., Samar, A., Azzari, G., Lobell, D., & Ermon, S. (2019). 
+   *Tile2Vec: Unsupervised representation learning for spatially distributed data.* 
+   Proceedings of the AAAI Conference on Artificial Intelligence, 33(01), 3967–3974. 
+   doi:10.1609/aaai.v33i01.33013967
+
+7. Ayush, K., Uzkent, B., Meng, C., Tanmay, K., Burke, M., & Lobell, D. (2021). 
+   *Geography-aware self-supervised learning.* Proceedings of the IEEE/CVF 
+   International Conference on Computer Vision, 10181–10190. 
+   doi:10.1109/ICCV48922.2021.01003
+
+8. Zhang, C., & Li, W. (2018). 
+   *Urban land use classification using high-resolution remote sensing imagery: A review.* 
+   IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 11(12), 4644–4667. 
+   doi:10.1109/JSTARS.2018.2876188
 
 ---
 
