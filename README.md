@@ -91,7 +91,7 @@ across the study area.
    - **Cloud Masking**: Apply cloud masks to Sentinel-2 imagery to remove cloud-covered areas.
    - **Resampling**:
      - Resample urban density data to 10-meter resolution to match Sentinel-2 imagery.
-     - Aggregate data into 512x512-meter patches, equivalent to 51x51 pixels.
+     - Aggregate data into 600x600-meter patches, equivalent to 60x60 pixels.
    - **Label Generation**:
      - Calculate the proportion of urban area within each patch.
      - Labels may represent continuous percentages or be categorized for classification tasks.
