@@ -43,9 +43,9 @@ approximately 2,050 square kilometers. It lies between latitudes 35.3°N to 35.8
 longitudes 78.0°W to 78.6°W. The county is part of the rapidly expanding Raleigh-Durham-Chapel 
 Hill metropolitan area, making it a pertinent case study for urban growth analysis.
 
-Coordinates are defined in the North Carolina State Plane Coordinate System (NAD83), with 
-units in meters. This coordinate system ensures spatial accuracy and consistency in measurements 
-across the study area.
+Coordinates are defined in the Universal Transverse Mercator (UTM) coordinate system, specifically 
+UTM Zone 17N (EPSG:32617), with units in meters. This coordinate system is used by Sentinel-2 imagery 
+in this region and ensures spatial accuracy and consistency in measurements across the study area.
 
 ![Johnston County, North Carolina](docs/johnston_county.png)
 
@@ -174,25 +174,29 @@ improving accuracy and extending the methodology in subsequent studies.
    *IEEE Geoscience and Remote Sensing Magazine*, 5(4), 8-36.
    doi:10.1109/MGRS.2017.2762307
 
-5. Reback, J., Uijttewaal, P., & Simons, G. (2020). 
-   *Foundation models for Earth observation: A review and outlook.* 
-   Remote Sensing of Environment, 248, 111964. 
-   doi:10.1016/j.rse.2020.111964
+5. Mai, G., Cundy, C., Choi, K., Hu, Y., Lao, N., & Ermon, S. (2022). 
+  *Towards a foundation model for geospatial artificial intelligence.* 
+  Proceedings of the 30th International Conference on Advances in Geographic Information Systems
+  (Article No. 106, pp. 1-4). https://doi.org/10.1145/3557915.3561043
+
+
+6. Dionelis, N., Fibaek, C., Camilleri, L., Luyts, A., Bosmans, J., & Le Saux, B. (2024). 
+   *Evaluating and Benchmarking Foundation Models for Earth Observation and Geospatial AI.*
+  *arXiv preprint*, arXiv:2406.18295. https://doi.org/10.48550/arXiv.2406.18295
 
 6. Jean, N., Wang, S., Samar, A., Azzari, G., Lobell, D., & Ermon, S. (2019). 
    *Tile2Vec: Unsupervised representation learning for spatially distributed data.* 
    Proceedings of the AAAI Conference on Artificial Intelligence, 33(01), 3967–3974. 
    doi:10.1609/aaai.v33i01.33013967
 
-7. Ayush, K., Uzkent, B., Meng, C., Tanmay, K., Burke, M., & Lobell, D. (2021). 
-   *Geography-aware self-supervised learning.* Proceedings of the IEEE/CVF 
-   International Conference on Computer Vision, 10181–10190. 
-   doi:10.1109/ICCV48922.2021.01003
+7. Ayush, K., Uzkent, B., Meng, C., Kumar, T., Burke, M., Lobell, D., & Ermon, S. (2021). 
+   *Geography-Aware Self-Supervised Learning.* In Proceedings of the IEEE/CVF International 
+   Conference on Computer Vision (ICCV) (pp. 10181–10190). doi:10.1109/CVPR52688.2022.01553
 
-8. Zhang, C., & Li, W. (2018). 
-   *Urban land use classification using high-resolution remote sensing imagery: A review.* 
-   IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 11(12), 4644–4667. 
-   doi:10.1109/JSTARS.2018.2876188
+8. 7.	R. Goetzke, M. Braun, H. -P. Thamm and G. Menz (2008). 
+   *Monitoring and Modeling Urban Land-Use Change with Multitemporal Satellite Data.* 
+   IGARSS 2008 - 2008 IEEE International Geoscience and Remote Sensing Symposium, 
+   Boston, MA, USA, 2008, pp. IV - 510-IV - 513, doi: 10.1109/IGARSS.2008.4779770
 
 ---
 
