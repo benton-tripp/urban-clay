@@ -1,7 +1,7 @@
 @echo off
 
 REM Create the virtual environment
-C:\Users\bento\miniconda3\python.exe -m venv env
+C:\Users\btripp\miniconda3\python.exe -m venv env
 
 REM Activate the virtual environment
 call env\Scripts\activate
