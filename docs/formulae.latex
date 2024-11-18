@@ -1,0 +1,58 @@
+% Simple Neural Network (SNN):
+
+\[
+\begin{aligned}
+\mathbf{h} &= \text{ReLU}\left( \mathbf{W}_1 \mathbf{x} + \mathbf{b}_1 \right), \\
+\hat{\mathbf{y}} &= \sigma\left( \mathbf{W}_2 \mathbf{h} + \mathbf{b}_2 \right),
+\end{aligned}
+\]
+
+% Where:
+% \mathbf{x} \in \mathbb{R}^{768}
+% \mathbf{W}_1 \in \mathbb{R}^{128 \times 768}, \quad \mathbf{b}_1 \in \mathbb{R}^{128}
+% \mathbf{W}_2 \in \mathbb{R}^{9 \times 128}, \quad \mathbf{b}_2 \in \mathbb{R}^{9}
+% \hat{\mathbf{y}} \in \mathbb{R}^{9}
+
+% Deep Neural Network (DNN):
+
+\[
+\begin{aligned}
+\mathbf{h}_1 &= \text{ReLU}\left( \mathbf{W}_1 \mathbf{x} + \mathbf{b}_1 \right), \\
+\mathbf{h}_2 &= \text{ReLU}\left( \mathbf{W}_2 \mathbf{h}_1 + \mathbf{b}_2 \right), \\
+\hat{\mathbf{y}} &= \sigma\left( \mathbf{W}_3 \mathbf{h}_2 + \mathbf{b}_3 \right),
+\end{aligned}
+\]
+
+% Convolutional Neural Network (CNN):
+
+\[
+\begin{aligned}
+\mathbf{h}_{\text{fc}} &= \text{ReLU}\left( \mathbf{W}_1 \mathbf{x} + \mathbf{b}_1 \right), \\
+\mathbf{h}_{\text{conv}} &= \text{ReLU}\left( \text{Conv1D}\left( \mathbf{h}_{\text{fc}} \right) \right), \\
+\hat{\mathbf{y}} &= \sigma\left( \mathbf{W}_2 \mathbf{h}_{\text{conv}} + \mathbf{b}_2 \right),
+\end{aligned}
+\]
+
+% Long Short-Term Memory Network (LSTM):
+
+\[
+\begin{aligned}
+\mathbf{h}_{\text{fc}} &= \text{ReLU}\left( \mathbf{W}_1 \mathbf{x} + \mathbf{b}_1 \right), \\
+\left( \mathbf{h}_{\text{lstm}}, \mathbf{c} \right) &= \text{LSTMCell}\left( \mathbf{h}_{\text{fc}}, \mathbf{h}_{t-1}, \mathbf{c}_{t-1} \right), \\
+\hat{\mathbf{y}} &= \sigma\left( \mathbf{W}_2 \mathbf{h}_{\text{lstm}} + \mathbf{b}_2 \right),
+\end{aligned}
+\]
+
+% Loss Functions:
+
+% Mean Squared Error (MSE):
+
+\[
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} \left( \hat{\mathbf{y}}_i - \mathbf{y}_i \right)^2,
+\]
+
+% Mean Absolute Error (MAE):
+
+\[
+\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} \left| \hat{\mathbf{y}}_i - \mathbf{y}_i \right|,
+\]
