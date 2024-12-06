@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>presentation-v2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="presentation-v2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="presentation-v2_files/libs/quarto-html/quarto.js"></script>
+<script src="presentation-v2_files/libs/quarto-html/popper.min.js"></script>
+<script src="presentation-v2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="presentation-v2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="presentation-v2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="presentation-v2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="presentation-v2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="presentation-v2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="presentation-v2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="slide-1-title-slide" class="level1">
+<h1>Slide 1: Title Slide</h1>
+<p><strong>Text on slide:</strong><br>
+“Utilizing the Clay Foundation Model and Sentinel-2 Imagery for Urban Growth Monitoring in Johnston County, NC<br>
+Benton Tripp”</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Good morning/afternoon. Today I will present a proof-of-concept study integrating Sentinel-2 multispectral satellite imagery with the Clay Foundation Model, an open-source deep learning framework for Earth observation, to monitor urban growth in Johnston County, North Carolina. The central motivation arises from the need for more frequent and timely estimates of urban imperviousness than what standard land cover products like the National Land Cover Database (NLCD) currently offer. By leveraging foundation models and deep learning, we aim to address these temporal gaps and contribute to more sustainable urban planning and environmental management.</p>
+<hr>
+</section>
+<section id="slide-2-introduction" class="level1">
+<h1>Slide 2: Introduction</h1>
+<p><strong>Text on slide:</strong><br>
+- Urbanization reshapes landscapes<br>
+- Imperviousness as an indicator<br>
+- Need for more frequent updates</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Urbanization profoundly influences land use, ecosystem dynamics, and resource distribution. Impervious surfaces, including roads, parking lots, and buildings, serve as key indicators of urban expansion. Their increase impacts hydrology, local climate, and ecological processes. While authoritative datasets like the NLCD provide valuable baseline information, they are updated approximately every five years. In regions undergoing rapid development, a five-year interval is insufficient to capture short-term changes. We seek to leverage satellite imagery and advanced computational methods to fill these temporal gaps, enabling a more responsive approach to assessing urban growth.</p>
+<hr>
+</section>
+<section id="slide-3-motivation" class="level1">
+<h1>Slide 3: Motivation</h1>
+<p><strong>Text on slide:</strong><br>
+- Rapid growth in Johnston County, NC<br>
+- Sentinel-2’s five-day revisit offers timely data<br>
+- Foundation models as label-efficient solutions</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Johnston County’s status as a rapidly growing area within the Raleigh-Durham-Chapel Hill metropolitan region makes it an ideal case study. Sentinel-2’s five-day revisit cycle provides frequent, high-resolution imagery suitable for detecting changes at finer temporal scales. Additionally, the emergence of foundation models in Earth observation, analogous to large-language models in natural language processing, provides a scalable approach. Pretrained on extensive datasets, models like the Clay Foundation Model can be adapted efficiently to downstream tasks with limited new labels, reducing the resource burden associated with traditional supervised methods.</p>
+<hr>
+</section>
+<section id="slide-4-research-question-and-objectives" class="level1">
+<h1>Slide 4: Research Question and Objectives</h1>
+<p><strong>Text on slide:</strong><br>
+- RQ: Can foundation models + Sentinel-2 improve imperviousness mapping frequency?<br>
+- Objective: Develop a scalable, data-efficient framework</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Our primary research question is whether the integration of the Clay Foundation Model and Sentinel-2 imagery can enhance the temporal resolution and accuracy of urban imperviousness mapping. The objective is to create a scalable, data-efficient framework capable of producing urban imperviousness estimates more frequently than the five-year cycle of datasets like NLCD. Through a combination of pretrained embeddings, optimized neural networks, and careful hyperparameter tuning, we aim to deliver timely insights into urban growth, thereby supporting adaptive urban planning and resource management.</p>
+<hr>
+</section>
+<section id="slide-5-study-site" class="level1">
+<h1>Slide 5: Study Site</h1>
+<p><strong>Text on slide:</strong><br>
+- Johnston County, North Carolina<br>
+- Area: ~2,050 km²<br>
+- Rapidly developing within Raleigh-Durham-Chapel Hill region</p>
+<p><strong>Placeholder for Image:</strong><br>
+<em>(Figure 1: Johnston County, North Carolina - a map showing the county boundary.)</em></p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Johnston County is located in eastern North Carolina between latitudes 35.3°N and 35.8°N, and longitudes 78.0°W and 78.6°W. Its proximity to a major metropolitan region makes it a prime location to observe and model urban expansion. By employing a UTM coordinate system (EPSG:32617), we ensure spatial accuracy for the data analyses. This area provides a realistic and relevant environment to test the framework’s ability to capture the nuances of rapidly changing urban landscapes.</p>
+<hr>
+</section>
+<section id="slide-6-data-sources-and-extent" class="level1">
+<h1>Slide 6: Data Sources and Extent</h1>
+<p><strong>Text on slide:</strong><br>
+- Sentinel-2 MSI imagery: 10m resolution, 13 spectral bands<br>
+- NLCD imperviousness data: 30m resolution, updated every ~5 years<br>
+- STAC APIs for data access (Microsoft Planetary Computer, AWS Earth Search)</p>
+<p><strong>Placeholder for Image:</strong><br>
+<em>(Figure 4: Sentinel-2 imagery of Johnston County in April 2016, overlaid with a 600x600m tile grid.)</em></p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+The primary data sources include Sentinel-2 multispectral images obtained through STAC-compliant APIs, ensuring accessible and reproducible workflows. NLCD imperviousness data serve as the ground truth, albeit at a coarser temporal resolution. To manage computational loads and maintain spatial consistency, the county was divided into 600×600-meter tiles. Each tile constitutes a spatial analysis unit, enabling systematic extraction of both spectral information and imperviousness targets.</p>
+<hr>
+</section>
+<section id="slide-7-data-processing-steps" class="level1">
+<h1>Slide 7: Data Processing Steps</h1>
+<p><strong>Text on slide:</strong><br>
+- Reproject boundaries to EPSG:32617<br>
+- Generate 600×600m grid tiles<br>
+- Clip, resample imperviousness (to 200m)<br>
+- Align Sentinel-2 images with tiles</p>
+<p><strong>Placeholder for Image:</strong><br>
+<em>(Figure 2: Map with county boundary and 600x600-meter tile grid.)</em></p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+We first reprojected county boundaries to EPSG:32617 and created a uniform grid of 600×600-meter tiles. Urban imperviousness was resampled from 30m to 200m for computational tractability, resulting in a 3×3 matrix per tile. Sentinel-2 imagery was clipped and normalized, focusing on key bands (Blue, Green, Red, NIR) to retain essential spectral detail. Seasonal and annual patterns were captured by selecting a total of 20 images from 2016 through 2024, maintaining minimal cloud cover.</p>
+<hr>
+</section>
+<section id="slide-8-temporal-data-selection" class="level1">
+<h1>Slide 8: Temporal Data Selection</h1>
+<p><strong>Text on slide:</strong><br>
+- Sentinel-2: ~3 images per year (2016-2024)<br>
+- Filtered by &lt;1% cloud cover<br>
+- Balanced temporal coverage</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Ensuring balanced temporal coverage involved selecting approximately three cloud-free Sentinel-2 images per year. This distribution aimed to capture seasonal variations and reduce temporal clustering. Although some dates were unavailable due to weather or data gaps, careful filtering ensured the dataset still reflects a broad range of environmental conditions, enabling more robust training and validation.</p>
+<hr>
+</section>
+<section id="slide-9-foundation-model-embeddings" class="level1">
+<h1>Slide 9: Foundation Model Embeddings</h1>
+<p><strong>Text on slide:</strong><br>
+- Clay Model: pretrained on large EO datasets<br>
+- Extract spatial embeddings (768-d)<br>
+- No manual feature engineering needed</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+We employed the Clay Foundation Model, a pretrained deep learning framework for Earth observation, to extract 768-dimensional spatial embeddings from each tile’s Sentinel-2 data. By doing so, we rely on a representation already attuned to EO patterns, reducing the need for manual feature engineering or external indices. These embeddings, combined with temporal embeddings (sine/cosine transformations of dates) and spatial embeddings (normalized latitude/longitude), provide a rich feature set for imperviousness prediction.</p>
+<hr>
+</section>
+<section id="slide-10-target-variable-imperviousness" class="level1">
+<h1>Slide 10: Target Variable: Imperviousness</h1>
+<p><strong>Text on slide:</strong><br>
+- NLCD imperviousness as ground truth<br>
+- Resampled to 200m (3×3 matrix per tile)<br>
+- Normalized values [0,1]</p>
+<p><strong>Placeholder for Image:</strong><br>
+<em>(Figure 3: Urban imperviousness across Johnston County in 2016 with tile grid.)</em></p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+The target variable is the imperviousness percentage for each tile, derived from NLCD data. After resampling to 200m, each tile contains a 3×3 grid of imperviousness values. These values are normalized between zero and one. Flattening this matrix into a 9-element vector facilitates direct regression modeling. This setup allows models to predict spatially explicit urban density patterns rather than a single aggregated value.</p>
+<hr>
+</section>
+<section id="slide-11-data-splitting-and-validation" class="level1">
+<h1>Slide 11: Data Splitting and Validation</h1>
+<p><strong>Text on slide:</strong><br>
+- Train on pre-2017 data, test on later data<br>
+- KMeans clustering on tile centroids for spatial splits<br>
+- 70% train, 10% validation, 20% test</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+To ensure robust evaluation and mitigate spatial autocorrelation, we implemented a spatially aware data splitting strategy. KMeans clustering on tile centroids grouped neighboring tiles together. We then randomly assigned these clusters to training, validation, and testing sets. This prevents leakage of spatial patterns and ensures performance metrics genuinely reflect the model’s ability to generalize beyond seen locations and times.</p>
+<hr>
+</section>
+<section id="slide-12-neural-network-architectures" class="level1">
+<h1>Slide 12: Neural Network Architectures</h1>
+<p><strong>Text on slide:</strong><br>
+- Simple Neural Network (SNN):<br>
+Input (768) → Hidden (128) → Output (9)<br>
+- Deep Neural Network (DNN):<br>
+Input (768) → Hidden (128,128) → Output (9)</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Two feedforward neural network architectures were tested. The SNN served as a baseline neural approach with a single hidden layer. The DNN introduced an additional hidden layer, enabling the model to learn more complex mappings. Both used ReLU activations in the hidden layers and sigmoid activations at the output to ensure predicted imperviousness values remain between zero and one. We optimized hyperparameters such as learning rate, weight decay, and dropout rates to enhance generalization.</p>
+<hr>
+</section>
+<section id="slide-13-model-training-details" class="level1">
+<h1>Slide 13: Model Training Details</h1>
+<p><strong>Text on slide:</strong><br>
+- Loss: Mean Squared Error (MSE)<br>
+- Optimizations: Dropout, Weight Decay, Early Stopping<br>
+- Baseline: Mean imperviousness from training data</p>
+<p><strong>Placeholder for a Table:</strong><br>
+| Model | MSE (Validation) | MAE (Validation) | |——-|——————|——————| | Baseline (Mean) | X.XX | X.XX | | SNN | X.XX | X.XX | | DNN | X.XX | X.XX |</p>
+<p><em>(Values to be determined based on preliminary runs)</em></p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Model training aimed at minimizing the mean squared error between predicted and observed imperviousness. Regularization methods, such as dropout and weight decay, and early stopping based on validation performance prevented overfitting. A simple baseline model—predicting the mean imperviousness from the training data—provided a reference for performance evaluation. Improving upon this baseline confirms that the deep learning approach captures patterns beyond mere averages.</p>
+<hr>
+</section>
+<section id="slide-14-preliminary-results" class="level1">
+<h1>Slide 14: Preliminary Results</h1>
+<p><strong>Text on slide:</strong><br>
+- DNN outperforms baseline and SNN<br>
+- Predicted imperviousness aligns with known urban areas<br>
+- Some seasonal and data gaps remain</p>
+<p><strong>Placeholder for Image:</strong><br>
+<em>(A hypothetical figure comparing predicted vs.&nbsp;actual imperviousness maps at a given time.)</em></p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Preliminary results suggest that the DNN architecture leverages the Clay-derived embeddings more effectively than the SNN or baseline. Predictions tend to spatially align with major urbanized zones in Johnston County. The model captures finer spatial details at a 600×600-meter scale, translating the spectral information into meaningful imperviousness estimates. However, certain uncertainties, particularly related to seasonal inconsistencies or missing data, remain and warrant further temporal validation.</p>
+<hr>
+</section>
+<section id="slide-15-residual-analysis-and-uncertainty" class="level1">
+<h1>Slide 15: Residual Analysis and Uncertainty</h1>
+<p><strong>Text on slide:</strong><br>
+- Residuals randomly distributed or biased?<br>
+- Potential influence of seasonality and vegetation cover<br>
+- Further refinement needed</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+A preliminary residual analysis examines whether model errors are uniformly distributed or concentrated in certain regions or time frames. Any systematic bias could indicate missing explanatory variables or inadequacies in the embeddings. Differences in vegetation phenology, atmospheric conditions, or subtle land-use transitions may contribute to residual patterns. Identifying these factors will guide improvements, potentially through incorporating additional spectral bands, vegetation indices, or refining the temporal selection strategy.</p>
+<hr>
+</section>
+<section id="slide-16-comparison-with-other-studies" class="level1">
+<h1>Slide 16: Comparison with Other Studies</h1>
+<p><strong>Text on slide:</strong><br>
+- Confirms feasibility of using foundation models in EO<br>
+- Aligns with findings from (Dionelis et al., 2024; Zhu et al., 2017)<br>
+- Highlights transferability and scalability</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Our results align with the growing body of research endorsing deep learning and foundation models in geospatial analysis. Past studies have shown that pretrained architectures can significantly reduce labeling costs and improve model generalization. While our method confirms these findings in the context of imperviousness mapping, it also underscores the importance of careful data curation, robust evaluation strategies, and continuous model refinement to ensure reliable, policy-relevant outcomes.</p>
+<hr>
+</section>
+<section id="slide-17-what-remains-to-be-done" class="level1">
+<h1>Slide 17: What Remains to be Done</h1>
+<p><strong>Text on slide:</strong><br>
+- Temporal validation using post-2017 data<br>
+- Incorporate additional indices or environmental variables<br>
+- Explore CNNs or transformer-based architectures</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+Current progress sets the stage for future enhancements. Temporally validating predictions against post-2017 imperviousness data will confirm the model’s ability to anticipate urban growth trends. Integrating additional spectral indices, topographical variables, or meteorological data may further refine predictive accuracy. Additionally, exploring more sophisticated architectures, such as convolutional neural networks or Vision Transformers, could better capture spatial structure and improve performance.</p>
+<hr>
+</section>
+<section id="slide-18-conclusion" class="level1">
+<h1>Slide 18: Conclusion</h1>
+<p><strong>Text on slide:</strong><br>
+- Foundation models + Sentinel-2 = increased temporal resolution<br>
+- Scalable, data-efficient approach<br>
+- Supports sustainable urban planning</p>
+<p><strong>Dialogue (to read aloud):</strong><br>
+In conclusion, this work demonstrates a promising framework for improving the temporal resolution of urban imperviousness mapping by integrating Sentinel-2 imagery with a foundation model. The Clay Foundation Model’s pretrained embeddings, combined with optimized neural network architectures, yield accurate, frequently updated imperviousness estimates. While additional validation, refinement, and experimentation remain, these advancements hold substantial potential for informing rapid urban growth management and sustainable resource allocation in Johnston County and beyond.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
